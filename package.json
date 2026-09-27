@@ -1,0 +1,22 @@
+{
+  "name": "reachinbox-email-scheduler",
+  "version": "1.0.0",
+  "description": "Production-grade email outreach scheduling platform",
+  "private": true,
+  "scripts": {
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "docker:reset": "docker compose down -v && docker compose up -d",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:worker": "cd backend && npm run worker",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd backend && npm run build && cd ../frontend && npm run build",
+    "db:migrate": "cd backend && npx prisma migrate dev --name init",
+    "db:seed": "cd backend && npx prisma db seed",
+    "db:generate": "cd backend && npx prisma generate",
+    "test": "cd backend && npm test"
+  },
+  "keywords": ["email-scheduler", "bullmq", "reachinbox"],
+  "license": "MIT"
+}
